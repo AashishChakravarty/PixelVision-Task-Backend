@@ -24,7 +24,4 @@ const usersSchema = new Schema({
   },
 });
 
-usersSchema.index({ location: '2dsphere' });
-usersSchema.index({ 'shop.location': '2dsphere' });
-
-module.exports = mongoose.model('Register', usersSchema);
+module.exports = mongoose.model('User', usersSchema);

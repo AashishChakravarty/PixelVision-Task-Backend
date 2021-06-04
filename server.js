@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 // CREATE EXPRESS APP
 const app = express();
 
+const cors = require('cors')
 // ENV VARIABLE SETTING
 const dotenv = require('dotenv');
 dotenv.config();
@@ -28,7 +29,7 @@ app.use(
                 	
                   CORS SETTINGS 
 *************************************************************************************************/
-
+app.use(cors());
 //ADDING CORS
 
 app.use(function (req, res, next) {
@@ -71,7 +72,7 @@ app.use('/', require('./app/routes')(app));
 
 ************************************************************************************************/
 
-var port = process.env.PORT || '3000';
+var port = process.env.PORT || '3001';
 // listen for requests
 app.listen(port, () => {
   console.log('Server is listening on port ' + port);
